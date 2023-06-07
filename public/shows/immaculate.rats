@@ -1,0 +1,14 @@
+{
+    "sounds":
+    [
+        {
+            "file": "../res/tannoy.wav"
+        }
+    ],
+    "cues":
+    [
+        {
+
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+Front End Screens
+
+Routes
+
+Splash
+    Display available shows
+        Create Show
+        Load Show
+
+Create Show
+    Splash
+    Enter Show Name
+
+Show
+    Splash
+
+
+Splash
+    Text Field Entry to cretae new show
+    or
+    Select Show from List
+
+        calls Show screen and creates Files for persistance
+        or
+        calls Show and opens file
+
+When server starts:
+    

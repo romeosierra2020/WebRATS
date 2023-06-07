@@ -1,1 +1,30 @@
-<%- include('./partials/header') %>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="../css/styles.css" />
+    </head>
+    <body>
+        <%- include('./partials/header') %> 
+        <form action="http://localhost:3000/show" method="post">
+            <% let fileNames = files.map(file => { %>
+                <% return file.split('.')[0]%>
+            <% }); %> 
+            <% for(file of files) { %>
+                <input type="radio" id=<%=file%> name="rText" value=<%=file%> />
+                <label for=<%=file%>><%=file%></label><br />
+            <% } %>
+            <label for="tFile">New Show: </label>
+            <input type = "text" id = "tFile" name = "tFile" value = "" placeholder="Show Name">
+            <br>
+            <input type="submit" value="Send Request" />
+        </form>
+        
+        <div class="hidden" id="ratsFiles"><%=ratsFiles%></div>
+
+        <script src="../js/script.js"></script>
+    </body>
+</html>
