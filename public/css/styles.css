@@ -1,3 +1,35 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    overflow: hidden;
+    --clr-accent: #150578;
+    --clr-accent2: #3943b7;
+    --clr-primary: #78c0e0;
+    --clr-secondary: #449dd1;
+    --clr-black: #0b0a07;
+    --clr-white: #f7f6f3;
+}
+body {
+    background-color: var(--clr-black);
+    color: var(--clr-primary);
+}
+
+canvas {
+    position: absolute;
+    top: 8vh;
+    left: 0;
+    background-color: var(--clr-black);
+    border: solid 1px red;
+}
+
+.hidden {
+    position: absolute;
+    width: 0;
+    height: 0
+
 }

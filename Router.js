@@ -55,7 +55,7 @@ router.post("/show", async (req, res) => {
       }
         try {
             await fs.writeFile(`${showFolder}/${req.body.tFile}.rats`, "");
-            res.render("rats", {show: req.body.tFile});
+            res.render("rats", {show: ""});
         } catch (err) {
             console.error(err)
             //res.send("Could not create File");
@@ -64,7 +64,9 @@ router.post("/show", async (req, res) => {
     }
     else {
         let show = req.body.rText.split('.')[0]
-        res.render("rats", {show});
+        let showJSON = (await fs.readFile(`${showFolder}${req.body.rText}`)).toString();
+        console.log(showJSON)
+        res.render("rats", {showJSON});
     }
 });
 router.get("/rats", (req, res) => {

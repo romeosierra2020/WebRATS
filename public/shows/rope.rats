@@ -1,0 +1,38 @@
+{
+    "sounds": [
+        {
+            "id": 0,
+            "name": "Tannoy",
+            "initialVolume": 1
+        },
+        {
+            "id": 1,
+            "name": "Bang",
+            "initialVolume": 1
+        }
+    ],
+    "cues": [
+        {
+            "id": 0,
+            "name": "Play Tannoy",
+            "cueActions": [
+                {
+                    "targetSound": 0,
+                    "requestedState": 25
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "name": "Delayed Tannoy",
+            "cueActions": [
+                {
+                    "targetSound": 1,
+                    "requestedState": 28,
+                    "timeToTarget": 2.5,
+                    "statePostDelay": 25
+                }
+            ]
+        }
+    ]
+}

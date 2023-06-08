@@ -26,3 +26,52 @@ Splash
 
 When server starts:
     
+RATSApp
+
+Components: 
+    Transform
+        position RATS Coords - 0 to 1
+    Renderable
+        Array of RO's
+    Clickable
+    Camera
+    Focus
+    Cue
+    Sound
+
+HUD
+    Global - Pause/Resume
+    Global -Go/Stop
+    Global - PANIC!
+    Global Volume
+    Global Balance // Need to use Web Audio API
+    Current Cue
+    Next Cue
+
+Cues Panel
+    Cue expanded/collapsed
+        collapsed - Cue Only
+        expanded - triggers
+    Current Highlighted in Green
+    Next Highlighted oin Orange
+
+Sounds Panel
+    Sound
+    Progress Bar
+    Faded if Sound Not Loaded
+
+Edit Panel
+    Edit Cue
+    CreateUpdate
+    Delete
+        Edit Trigger
+            Create
+            Update
+            Delete
+
+Edit Sound
+    Volume
+    Balance??
+    Effects??
+
+
