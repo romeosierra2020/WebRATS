@@ -4,8 +4,21 @@ import Cue from "./Cue.js";
 
 export default class CueManager {
     constructor() {
+        this.cues = [];
         let show = document.getElementById('show').innerText;
-        //TODO Parse show to individual cues
+        if(show) {
+            try {
+                let showJSON = JSON.parse(show);
+                console.log(showJSON.cues.length)
+                showJSON.cues.forEach(cue => {
+                    console.log("Creating Cue")
+                    this.cues.push(new Cue(cue))
+                })
+                console.log('Successfully Parsed')
+            } catch(err) {
+                console.log("File Corrupt")
+            }
+        }
     }
     update(){
         MessageManager.get().messages[GC.MSG_SOURCE_WINDOW].forEach(message => {

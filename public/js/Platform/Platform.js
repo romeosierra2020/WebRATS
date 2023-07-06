@@ -31,15 +31,7 @@ export default class Platform {
         })
     }
     render() {
-        MessageManager.get().messages[GC.MSG_SOURCE_RATS].forEach(message => {
-            switch(message.type) {
-                case GC.MSG_WINDOW_RESIZE: {
-                    console.log("Render rcvd Window Resize Message")
-                }
-                break;
-                default:
-                    break;
-            }
-        })
+        Display.get().clear();
+        Display.get().render()
     }
 }

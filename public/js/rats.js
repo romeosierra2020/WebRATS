@@ -19,6 +19,7 @@ function tick(timeStamp) {
             console.log("Tick")
             Platform.get().update();
             RATSApp.get().update(dt);
+            RATSApp.get().render();
             Platform.get().audio();
             Platform.get().render();
             MessageManager.get().clear()

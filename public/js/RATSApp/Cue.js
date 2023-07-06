@@ -1,7 +1,8 @@
 export default class Cue {
-    constructor() {
-        this.id = 0;
-        this.name = "Cue";
-        this.actions = []
+    constructor(cue) {
+        console.log(cue);
+        this.id = cue.id;
+        this.name = cue.name;
+        this.cueActions = [...cue.cueActions];
     }
 }

@@ -3,6 +3,8 @@ import GC from "../GC.js";
 import CueManager from "./CueManager.js";
 import SoundManager from "./SoundManager.js";
 import CameraManager from "./CameraManager.js";
+import RenderObject from "./RenderObject.js";
+import Message from "../Message.js";
 
 export default class RATSApp {
     constructor() {
@@ -38,4 +40,22 @@ export default class RATSApp {
         this.soundManager.update(dt)
         this.cameraManager.update(dt)
     }
+    render(){
+        this.soundManager.sounds.forEach((sound) => {
+            sound.ros.forEach(ro => {
+                let msg = new Message();
+                msg.type = ro.type
+                msg.data.x = ro.x;
+                msg.data.y = ro.y;
+                msg.data.width = ro.width;
+                msg.data.height = ro.height;
+                msg.data.color = ro.color;
+                msg.data.label = ro.label
+                msg.data.font = ro.font
+                MessageManager.get().send(GC.MSG_SOURCE_RATS, msg)
+            })
+
+        })
+    }
+
 }

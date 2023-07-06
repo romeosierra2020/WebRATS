@@ -5,8 +5,7 @@ import bodyParser from "body-parser";
 const router = express.Router();
 const showFolder = "./public/shows/";
 router.use(express.static("public"));
-router.use(bodyParser.urlencoded());
-
+router.use(bodyParser.urlencoded({extended: true}));
 router.use(bodyParser.json());
 router.get("/", async (req, res) => {
 

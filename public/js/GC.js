@@ -38,5 +38,16 @@ export default class GC {
         GC.SOUND_PAUSED = 26;
         GC.SOUND_FADING = 27;
         GC.SOUND_DELAYED = 28;
+
+        GC.MSG_RENDER_STROKERECT = 29;
+        GC.MSG_RENDER_FILLRECT = 30;
+        GC.MSG_RENDER_TEXT = 31;
+        
+        GC.COLOR_ACCENT = '#150578';
+        GC.COLOR_SECONDARY = '#3913B7'
+        GC.COLOR_PRIMARY = '#78C0E0'
+        GC.COLOR_ACCENT2 = '#449DD1'
+        GC.COLOR_BLACK = '#0B0A07'
+        GC.COLOR_WHITE = '#F7F6F3'
     }
 }

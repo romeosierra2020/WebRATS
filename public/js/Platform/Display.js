@@ -42,4 +42,49 @@ export default class Display {
         });
         MessageManager.get().send(GC.MSG_SOURCE_WINDOW, message);
     }
+    clear() {
+        this.ctx.clearRect(0, 0, this.width, this.height);
+    }
+    render() {
+        MessageManager.get().messages[GC.MSG_SOURCE_RATS].forEach((message) => {
+            switch (message.type) {
+                case GC.MSG_RENDER_STROKERECT:
+                    {
+                        this.strokeRect(message.data);
+                    }
+                    break;
+                case GC.MSG_RENDER_TEXT:
+                    {
+                        this.fillText(message.data);
+                    }
+                    break;
+
+                default:
+                    break;
+            }
+        });
+    }
+    strokeRect(ro) {
+        this.ctx.strokeStyle = ro.color;
+
+        console.log(ro.color);
+        this.ctx.strokeRect(
+            Math.floor(ro.x * this.width),
+            Math.floor(ro.y * this.height),
+            Math.floor(ro.width * this.width),
+            Math.floor(ro.height * this.height)
+        );
+    }
+    fillText(ro) {
+        console.log(ro.font)
+        this.ctx.fillStyle = ro.color;
+        this.ctx.font = ro.font;
+        this.ctx.fillText(
+            ro.label,
+            ro.x * this.width,
+            ro.y * this.height,
+            // ro.width * this.width,
+            // ro.height * this.height
+        );
+    }
 }
